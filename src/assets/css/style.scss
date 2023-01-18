@@ -1,0 +1,90 @@
+@use '_sass-includes/_vars' as var;
+@use '_sass-includes/_reset';
+@use '_sass-includes/_grid' with (
+    $queries : var.$queries,
+    $gridcolumns: var.$gridcolumns,
+    $gaps: var.$gaps
+);
+@use '_sass-includes/_utilities' with (
+    $queries : var.$queries,
+    $sizes : var.$sizes
+);
+
+:root{
+    --cl-accent: #31C5F0;
+    --cl-text: #000;
+    --cl-text-alt: #fff;
+    --cl-bg: #FCFCFC;
+    --cl-bg-gradient: #F9F9F9;
+    --cl-lightgrey: #D4DFEC;
+
+    --ft-fam-default: 'Montserrat', sans-serif;
+    --ft-fam-h: var(--ft-fam-default);
+
+    --ft-size-default: 18px;
+    --ft-size-small: 15px;
+    --ft-size-h1: 50px;
+
+    --ft-lh-default: 1.6;
+    --ft-lh-h1: 1.1;
+}
+
+body{
+    font-family: var(--ft-fam-default);
+    font-size: var(--ft-size-default);
+    line-height: var(--ft-lh-default);
+    background-color: var(--cl-bg);
+}
+.section{
+    padding-inline: 2.5%;
+}
+.container{
+    margin-inline: auto;
+    max-width: 1380px;
+}
+
+h1{
+    font-size: var(--ft-size-h1);
+    line-height: var(--ft-lh-h1);
+}
+
+//header
+header{
+    background-color: var(--cl-text);
+    padding-block: 10px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        nav > ul{
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 16px;
+
+            a{
+                color: var(--cl-text-alt);
+            }
+        }
+    }
+}
+
+footer{
+    background-color: var(--cl-text);
+    color: var(--cl-text-alt);
+    font-size: var(--ft-size-small);
+}
+
+.hero{
+    background: url(/assets/img/herodotbg.png), var(--cl-accent);
+    background-repeat: repeat, repeat;
+
+    &-text{
+        align-self: center;
+    }
+    &-img{
+        justify-self: end;
+    }
+}
